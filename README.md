@@ -1,4 +1,5 @@
-# Implementation of Univariate Linear Regression
+## EXP.No: 1 Implementation of Univariate Linear Regression
+## DATE: 27.04.26
 ## AIM:
 To implement univariate Linear Regression to fit a straight line using least squares.
 
@@ -20,38 +21,31 @@ To implement univariate Linear Regression to fit a straight line using least squ
 ```
 Program to implement univariate Linear Regression to fit a straight line using least squares.
 Developed by: ADITHYA V
-RegisterNumber:  212223110001
-
-
+RegisterNumber: 212223110001
+```
+```python
 import numpy as np
 import matplotlib.pyplot as plt
 X=np.array(eval(input()))
 Y=np.array(eval(input()))
-X_mean=np.mean(X)
-
-Y_mean=np.mean(Y)
-num=0
-denum=0
+Xmean=np.mean(X)
+Ymean=np.mean(Y)
+num,den=0,0 # num = numerator, den = denomenator
 for i in range(len(X)):
-  num+=(X[i]-X_mean)*(Y[i]-Y_mean)
-  denum+=(X[i]-X_mean)**2
-m=num/denum
-print(X_mean)
-print(Y_mean)
-print(m)
-
-b=Y_mean - m*X_mean
-print(b)
-Y_pred=m*X+b
+  num+=(X[i]-Xmean)*(Y[i]-Ymean)
+  den+=(X[i]-Xmean)**2
+m=num/den
+c=Ymean-m*Xmean
+print(m,c)
+Y_pred=m*X+c
 print(Y_pred)
-plt.scatter(X,Y,color='blue')
-plt.plot(X,Y_pred,color='yellow') 
+plt.scatter(X,Y)
+plt.plot(X,Y_pred,color="red")
 plt.show()
-
 ```
 
 ## Output:
-![exp 1 ml](https://github.com/user-attachments/assets/e9b3efc8-866b-40f4-b503-1e3c6323c9c5)
+<img width="712" height="649" alt="image" src="https://github.com/user-attachments/assets/09a6ee07-4efe-4fd4-8545-8712ad0ebdf8" />
 
 
 
